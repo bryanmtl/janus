@@ -1,7 +1,6 @@
-
 if has("gui_macvim")
   " Fullscreen takes up entire screen
-  set fuoptions=maxhorz,maxvert
+  set fuoptions=maxvert,maxhorz
 
   " Command-T for CommandT
   macmenu &File.New\ Tab key=<nop>
@@ -22,12 +21,12 @@ endif
 set guioptions-=T
 
 " Default gui color scheme
-color molokai
+color ir_black
 
 " ConqueTerm wrapper
 function StartTerm()
   execute 'ConqueTerm ' . $SHELL . ' --login'
-  setlocal listchars=tab:\ \ 
+  setlocal listchars=tab:\ \
 endfunction
 
 " Project Tree
@@ -129,7 +128,84 @@ call s:DefineCommand("touch", "Touch")
 call s:DefineCommand("rm", "Remove")
 call s:DefineCommand("e", "Edit")
 
+
+let g:manpageview_pgm= 'man -P "/usr/bin/less -is"'
+
+if has('gui_running')
+    set cursorline
+    set encoding=utf-8
+    set go+=c
+    set go-=m
+    set go-=r
+    set go-=R
+    set go-=l
+    set go-=L
+    set go-=T
+    set go-=b
+    set go-=h
+    set guifont=Inconsolata:h14
+    colorscheme ir_black
+    set relativenumber
+
+    " C-# switches to tab
+    nmap <d-1> :tabn 1
+    nmap <d-2> :tabn 2
+    nmap <d-3> :tabn 3
+    nmap <d-4> :tabn 4
+    nmap <d-5> :tabn 5
+    nmap <d-6> :tabn 6
+    nmap <d-7> :tabn 7
+    nmap <d-8> :tabn 8
+    nmap <d-9> :tabn 9
+
+    nmap <c-tab> :tabnext<cr>
+    imap <c-tab> <c-o>:tabnext<cr>
+    vmap <c-tab> <c-o>:tabnext<cr>
+    nmap <c-s-tab> :tabprevious<cr>
+    imap <c-s-tab> <c-o>:tabprevious<cr>
+    vmap <c-s-tab> <c-o>:tabprevious<cr>
+
+    if has('gui_macvim')
+        set guifont=Menlo\ Regular:h14
+        set fuoptions=maxvert,maxhorz
+        colorscheme ir_black
+
+        map <D-1> :tabn 1<CR>
+        map <D-2> :tabn 2<CR>
+        map <D-3> :tabn 3<CR>
+        map <D-4> :tabn 4<CR>
+        map <D-5> :tabn 5<CR>
+        map <D-6> :tabn 6<CR>
+        map <D-7> :tabn 7<CR>
+        map <D-8> :tabn 8<CR>
+        map <D-9> :tabn 9<CR>
+        map! <D-1> <C-O>:tabn 1<CR>
+        map! <D-2> <C-O>:tabn 2<CR>
+        map! <D-3> <C-O>:tabn 3<CR>
+        map! <D-4> <C-O>:tabn 4<CR>
+        map! <D-5> <C-O>:tabn 5<CR>
+        map! <D-6> <C-O>:tabn 6<CR>
+        map! <D-7> <C-O>:tabn 7<CR>
+        map! <D-8> <C-O>:tabn 8<CR>
+        map! <D-9> <C-O>:tabn 9<CR>
+        set antialias
+
+        macmenu &File.New\ Tab key=<nop>
+        map <D-t> :CommandT<CR>
+
+        map <D-E> :call StartTerm()<CR>
+
+        map <leader>f :Ack<space>
+
+        nmap <D-[> <<
+        nmap <D-]> >>
+        vmap <D-[> <gv
+        vmap <D-]> >gv
+    endif
+endif
+
+
 " Include user's local vim config
-if filereadable(expand("~/.gvimrc.local"))
-  source ~/.gvimrc.local
+if filereadable(expand("gvimrc.local"))
+  source gvimrc.local
 endif
