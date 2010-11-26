@@ -34,3 +34,16 @@ fun! ClearAllTrailingSpaces()
   %s/\s\+$//
 endfun
 map <leader>c :call ClearAllTrailingSpaces()<CR>
+
+" set my status line
+" i get almost all my contextual information from this bit
+set laststatus=2
+
+" should be:
+" set statusline=[%n]\ %<%.99f\ %h%w%m%r%y%{exists('g:loaded_rvm')?Rvm#statusline():''}%=%-16(\ %l,%c-%v\ %)%P
+set statusline=[%n]\ %<%.99f\ %h%w%m%r%y%=%-16(\ %l,%c-%v\ %)%P
+
+"
+" Bells suck, quash them or make them go away
+set noerrorbells
+set vb t_vb=""
