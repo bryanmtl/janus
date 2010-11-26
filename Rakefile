@@ -141,16 +141,17 @@ vim_plugin_task "zoomwin",          "git://github.com/vim-scripts/ZoomWin.git"
 vim_plugin_task "snipmate",         "git://github.com/msanders/snipmate.vim.git"
 vim_plugin_task "markdown",         "git://github.com/tpope/vim-markdown.git"
 vim_plugin_task "unimpaired",       "git://github.com/tpope/vim-unimpaired.git"
-vim_plugin_task "rvm",              "git://github.com/csexton/rvm.vim.git"
 vim_plugin_task "gist",             "git://github.com/mattn/gist-vim.git"
 vim_plugin_task "vimwiki",          "git://github.com/vim-scripts/vimwiki.git"
 vim_plugin_task "tabular",          "git://github.com/godlygeek/tabular.git"
 vim_plugin_task "bufexplorer",      "git://github.com/vim-scripts/bufexplorer.zip.git"
-vim_plugin_task "rvm",              "git://github.com/csexton/rvm.vim.git"
-
 
 vim_plugin_task "ir_black-theme" do
   sh "curl https://github.com/jschoolcraft/ir_black.vim/raw/master/ir_black.vim > colors/ir_black.vim"
+end
+
+vim_plugin_task "rvm" do
+  sh "curl https://github.com/csexton/rvm.vim/raw/master/plugin/rvm.vim > plugin/rvm.vim"
 end
 
 vim_plugin_task "snipmate.vim",     "http://github.com/msanders/snipmate.vim.git" do
