@@ -148,7 +148,7 @@ vim_plugin_task "tabular",          "git://github.com/godlygeek/tabular.git"
 vim_plugin_task "bufexplorer",      "git://github.com/vim-scripts/bufexplorer.zip.git"
 
 vim_plugin_task "ir_black-theme" do
-  sh "curl http://blog.infinitered.com/entry_files/8/ir_black.vim > colors/ir_black.vim"
+  sh "curl https://github.com/jschoolcraft/ir_black.vim/raw/master/ir_black.vim > colors/ir_black.vim"
 end
 
 vim_plugin_task "snipmate.vim",     "http://github.com/msanders/snipmate.vim.git" do
