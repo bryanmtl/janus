@@ -1,8 +1,3 @@
-runtime! autoload/pathogen.vim
-if exists('g:loaded_pathogen')
-  call pathogen#runtime_prepend_subdirectories(expand('~/.vim/bundles'))
-end
-
 set nocompatible
 
 set number
