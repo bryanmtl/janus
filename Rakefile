@@ -120,7 +120,6 @@ def vim_plugin_task(name, repo=nil)
 end
 
 vim_plugin_task "ack.vim",          "git://github.com/mileszs/ack.vim.git"
-vim_plugin_task "color-sampler",    "http://www.vim.org/scripts/download_script.php?src_id=12179"
 vim_plugin_task "conque",           "http://conque.googlecode.com/files/conque_1.1.tar.gz"
 vim_plugin_task "fugitive",         "git://github.com/tpope/vim-fugitive.git"
 vim_plugin_task "git",              "git://github.com/tpope/vim-git.git"
@@ -131,19 +130,40 @@ vim_plugin_task "markdown_preview", "git://github.com/robgleeson/vim-markdown-pr
 vim_plugin_task "nerdtree",         "git://github.com/scrooloose/nerdtree.git"
 vim_plugin_task "nerdcommenter",    "git://github.com/scrooloose/nerdcommenter.git"
 vim_plugin_task "surround",         "git://github.com/tpope/vim-surround.git"
-vim_plugin_task "taglist",          "http://vim.sourceforge.net/scripts/download_script.php?src_id=7701"
+vim_plugin_task "taglist",          "git://github.com/vim-scripts/taglist.vim.git"
 vim_plugin_task "vividchalk",       "git://github.com/tpope/vim-vividchalk.git"
 vim_plugin_task "supertab",         "git://github.com/ervandew/supertab.git"
 vim_plugin_task "cucumber",         "git://github.com/tpope/vim-cucumber.git"
 vim_plugin_task "textile",          "git://github.com/timcharper/textile.vim.git"
 vim_plugin_task "rails",            "git://github.com/tpope/vim-rails.git"
 vim_plugin_task "rspec",            "git://github.com/taq/vim-rspec.git"
-vim_plugin_task "zoomwin",          "http://www.vim.org/scripts/download_script.php?src_id=9865"
+vim_plugin_task "zoomwin",          "git://github.com/vim-scripts/ZoomWin.git"
 vim_plugin_task "snipmate",         "git://github.com/msanders/snipmate.vim.git"
-vim_plugin_task "autoclose",        "git://github.com/Townk/vim-autoclose.git"
 vim_plugin_task "markdown",         "git://github.com/tpope/vim-markdown.git"
-vim_plugin_task "align",            "git://github.com/tsaleh/vim-align.git"
 vim_plugin_task "unimpaired",       "git://github.com/tpope/vim-unimpaired.git"
+vim_plugin_task "rvm",              "git://github.com/csexton/rvm.vim.git"
+vim_plugin_task "gist",             "git://github.com/mattn/gist-vim.git"
+vim_plugin_task "vimwiki",          "git://github.com/vim-scripts/vimwiki.git"
+vim_plugin_task "tabular",          "git://github.com/godlygeek/tabular.git"
+vim_plugin_task "bufexplorer",      "git://github.com/vim-scripts/bufexplorer.zip.git"
+
+vim_plugin_task "ir_black-theme" do
+  sh "curl http://blog.infinitered.com/entry_files/8/ir_black.vim > colors/ir_black.vim"
+end
+
+vim_plugin_task "snipmate.vim",     "http://github.com/msanders/snipmate.vim.git" do
+  cwd = File.expand_path("../", __FILE__)
+  other_dirs = %w[ after snippets ]
+  other_dirs.each { |d| mkdir_p d }
+
+  Dir.chdir "tmp/snipmate.vim" do
+    other_dirs.each do |subdir|
+      if File.exists?(subdir)
+        sh "cp -rf #{subdir}/* #{cwd}/#{subdir}/"
+      end
+    end
+  end
+end
 
 vim_plugin_task "command_t",        "git://github.com/wincent/Command-T.git" do
   sh "find ruby -name '.gitignore' | xargs rm"
@@ -155,42 +175,6 @@ vim_plugin_task "command_t",        "git://github.com/wincent/Command-T.git" do
     end
     sh "make clean && make"
   end
-end
-
-vim_plugin_task "janus_themes" do
-  # custom version of railscasts theme
-  File.open(File.expand_path("../colors/railscasts+.vim", __FILE__), "w") do |file|
-    file.puts <<-VIM.gsub(/^ +/, "").gsub("<SP>", " ")
-      runtime colors/railscasts.vim
-      let g:colors_name = "railscasts+"
-
-      set fillchars=vert:\\<SP>
-      set fillchars=stl:\\<SP>
-      set fillchars=stlnc:\\<SP>
-      hi  StatusLine guibg=#cccccc guifg=#000000
-      hi  VertSplit  guibg=#dddddd
-    VIM
-  end
-
-  # custom version of jellybeans theme
-  File.open(File.expand_path("../colors/jellybeans+.vim", __FILE__), "w") do |file|
-    file.puts <<-VIM.gsub(/^      /, "")
-      runtime colors/jellybeans.vim
-      let g:colors_name = "jellybeans+"
-
-      hi  VertSplit    guibg=#888888
-      hi  StatusLine   guibg=#cccccc guifg=#000000
-      hi  StatusLineNC guibg=#888888 guifg=#000000
-    VIM
-  end
-end
-
-vim_plugin_task "molokai" do
-  sh "curl http://www.vim.org/scripts/download_script.php?src_id=9750 > colors/molokai.vim"
-end
-
-vim_plugin_task "mustasche" do
-  sh "curl http://github.com/defunkt/mustache/raw/master/contrib/mustache.vim > syntax/mustache.vim"
 end
 
 desc "Cleanup all the files"
