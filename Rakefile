@@ -120,6 +120,7 @@ def vim_plugin_task(name, repo=nil)
 end
 
 vim_plugin_task "ack.vim",          "git://github.com/mileszs/ack.vim.git"
+vim_plugin_task "asneeded",         "git://github.com/vim-scripts/AsNeeded.git"
 vim_plugin_task "conque",           "http://conque.googlecode.com/files/conque_1.1.tar.gz"
 vim_plugin_task "fugitive",         "git://github.com/tpope/vim-fugitive.git"
 vim_plugin_task "git",              "git://github.com/tpope/vim-git.git"
@@ -145,6 +146,9 @@ vim_plugin_task "gist",             "git://github.com/mattn/gist-vim.git"
 vim_plugin_task "vimwiki",          "git://github.com/vim-scripts/vimwiki.git"
 vim_plugin_task "tabular",          "git://github.com/godlygeek/tabular.git"
 vim_plugin_task "bufexplorer",      "git://github.com/vim-scripts/bufexplorer.zip.git"
+vim_plugin_task "yankring",         "git://github.com/chrismetcalf/vim-yankring.git"
+vim_plugin_task "zoomwin",          "git://github.com/vim-scripts/ZoomWin.git"
+vim_plugin_task "tailminusf",       "git://github.com/vim-scripts/TailMinusF.git"
 
 vim_plugin_task "ir_black-theme" do
   sh "curl https://github.com/jschoolcraft/ir_black.vim/raw/master/ir_black.vim > colors/ir_black.vim"
