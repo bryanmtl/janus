@@ -4,7 +4,7 @@ let NERDTreeChDirMode=2
 let NERDTreeShowHidden=1
 
 " keybindings
-map <Leader>d :NERDTreeToggle<CR>
+map <Leader>n :NERDTreeToggle<CR>
 
 " NERDTree configuration
 let NERDTreeIgnore=['\.rbc$', '\~$']
