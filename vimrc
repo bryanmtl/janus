@@ -14,6 +14,9 @@ set history=100
 " use ; for <Leader>
 let mapleader = ";"
 
+set cursorline
+set scrolloff=999
+
 "" shortmess settings:
 " f - use "(3 of 5)" instead of "(file 3 of 5)"
 " i - use "[noeol]" instead of "[Incomplete last line]"
