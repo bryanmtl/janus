@@ -2,6 +2,8 @@ if has("gui_macvim")
   " Fullscreen takes up entire screen
   set fuoptions=maxhorz,maxvert
 
+  macmenu &File.Open\ Tab\.\.\. key=<nop>
+
   " Command-T for CommandT
   macmenu &File.New\ Tab key=<nop>
   map <D-t> :CommandT<CR>
@@ -15,14 +17,15 @@ if has("gui_macvim")
 
   " Command-/ to toggle comments
   map <D-/> <plug>NERDCommenterToggle<CR>
+  au GUIEnter * set fullscreen
 endif
 
-" Start without the toolbar
-set guioptions=aAse
-set guioptions-=TLr
+color ir_black
 
-" Default gui color scheme
-" color molokai
+set guifont=Monaco:h14
+
+" Start without the toolbar
+set guioptions=aAce
 
 " ConqueTerm wrapper
 function StartTerm()
@@ -124,7 +127,3 @@ call s:DefineCommand("touch", "Touch")
 call s:DefineCommand("rm", "Remove")
 call s:DefineCommand("e", "Edit")
 
-" Include user's local vim config
-if filereadable(expand("~/.gvimrc.local"))
-  source ~/.gvimrc.local
-endif
