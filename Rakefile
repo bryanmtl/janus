@@ -174,6 +174,8 @@ vim_plugin_task "snipmate.vim",     "http://github.com/msanders/snipmate.vim.git
 end
 
 vim_plugin_task "rubysnippets", "git://github.com/kaichen/vim-snipmate-ruby-snippets.git" do
+  cwd = File.expand_path("../", __FILE__)
+  dir = File.expand_path("tmp/rubysnippets")
   cp "#{dir}/*.snippets" "#{cwd}/snippets/"
 end
 
