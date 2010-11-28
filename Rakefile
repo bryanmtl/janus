@@ -174,6 +174,10 @@ vim_plugin_task "snipmate.vim",     "http://github.com/msanders/snipmate.vim.git
   end
 end
 
+vim_plugin_task "rubysnippets", "git://github.com/kaichen/vim-snipmate-ruby-snippets.git" do
+  cp "#{dir}/*.snippets" "#{cwd}/snippets/"
+end
+
 vim_plugin_task "command_t",        "git://github.com/wincent/Command-T.git" do
   sh "find ruby -name '.gitignore' | xargs rm"
   Dir.chdir "ruby/command-t" do
