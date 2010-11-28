@@ -1,3 +1,5 @@
+map <leader>t :CommandT<cr>
+
 " Command-T configuration
 let g:CommandTMaxHeight=20
 
