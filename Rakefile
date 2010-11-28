@@ -176,7 +176,7 @@ end
 vim_plugin_task "rubysnippets", "git://github.com/kaichen/vim-snipmate-ruby-snippets.git" do
   cwd = File.expand_path("../", __FILE__)
   dir = File.expand_path("tmp/rubysnippets")
-  sh "cp #{dir}/*.snippets" "#{cwd}/snippets/"
+  sh "cp #{dir}/*.snippets #{cwd}/snippets/"
 end
 
 vim_plugin_task "command_t",        "git://github.com/wincent/Command-T.git" do
