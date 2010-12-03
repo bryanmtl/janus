@@ -17,6 +17,10 @@ if has("gui_macvim")
 
   " Command-/ to toggle comments
   map <D-/> <plug>NERDCommenterToggle<CR>
+
+  " Caommand-f to toggle full screen
+  map <D-f> :set invfu<CR>
+
   au GUIEnter * set fullscreen
 endif
 
