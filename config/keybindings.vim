@@ -4,11 +4,12 @@ map <Leader>w :w!<CR>
 " ;q closes a vim-window
 map <Leader>q :q!<CR>
 
-" navigate among windows using ;[hjkl]
-map <Leader>h <C-W>h
-map <Leader>j <C-W>j
-map <Leader>k <C-W>k
-map <Leader>l <C-W>l
+" EASY WINDOW NAVIGATION
+"-------------------------------------------------
+map <C-h> <C-w>h
+map <C-j> <C-w>j
+map <C-k> <C-w>k
+map <C-l> <C-w>l
 
 " use C-j and C-k to 'bubble' lines (see
 " http://vimcasts.org/episodes/bubbling-text/)

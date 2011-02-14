@@ -156,6 +156,10 @@ vim_plugin_task "ir_black-theme" do
   sh "curl https://github.com/jschoolcraft/ir_black.vim/raw/master/ir_black.vim > colors/ir_black.vim"
 end
 
+vim_plugin_task "molokai" do
+  sh "curl https://github.com/mrtazz/molokai.vim/raw/master/colors/molokai.vim > colors/molokai.vim"
+end
+
 vim_plugin_task "rvm" do
   sh "curl https://github.com/csexton/rvm.vim/raw/master/plugin/rvm.vim > plugin/rvm.vim"
 end
