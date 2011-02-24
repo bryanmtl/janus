@@ -21,7 +21,7 @@ if has("gui_macvim")
   " Caommand-f to toggle full screen
   map <D-f> :set invfu<CR>
 
-  au GUIEnter * set fullscreen
+  "au GUIEnter * set fullscreen
 endif
 
 color ir_black
