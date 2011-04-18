@@ -151,6 +151,8 @@ vim_plugin_task "tailminusf",       "git://github.com/vim-scripts/TailMinusF.git
 vim_plugin_task "syntastic",        "git://github.com/scrooloose/syntastic.git"
 vim_plugin_task "makegreen",        "git://github.com/reinh/vim-makegreen.git"
 vim_plugin_task "scss-syntax",      "git://github.com/cakebaker/scss-syntax.vim.git"
+vim_plugin_task "notes",            "git://github.com/xolox/vim-notes.git"
+vim_plugin_task "solarized",        "git://github.com/altercation/vim-colors-solarized.git"
 
 vim_plugin_task "ir_black-theme" do
   sh "curl https://github.com/jschoolcraft/ir_black.vim/raw/master/ir_black.vim > colors/ir_black.vim"
