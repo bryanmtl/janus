@@ -127,7 +127,6 @@ vim_plugin_task "git",              "git://github.com/tpope/vim-git.git"
 vim_plugin_task "haml",             "git://github.com/tpope/vim-haml.git"
 vim_plugin_task "indent_object",    "git://github.com/michaeljsmith/vim-indent-object.git"
 vim_plugin_task "javascript",       "git://github.com/pangloss/vim-javascript.git"
-vim_plugin_task "markdown_preview", "git://github.com/robgleeson/vim-markdown-preview.git"
 vim_plugin_task "nerdtree",         "git://github.com/scrooloose/nerdtree.git"
 vim_plugin_task "nerdcommenter",    "git://github.com/scrooloose/nerdcommenter.git"
 vim_plugin_task "surround",         "git://github.com/tpope/vim-surround.git"
@@ -153,10 +152,7 @@ vim_plugin_task "makegreen",        "git://github.com/reinh/vim-makegreen.git"
 vim_plugin_task "scss-syntax",      "git://github.com/cakebaker/scss-syntax.vim.git"
 vim_plugin_task "notes",            "git://github.com/xolox/vim-notes.git"
 vim_plugin_task "solarized",        "git://github.com/altercation/vim-colors-solarized.git"
-
-vim_plugin_task "ir_black-theme" do
-  sh "curl https://github.com/jschoolcraft/ir_black.vim/raw/master/ir_black.vim > colors/ir_black.vim"
-end
+vim_plugin_task "irblack",          "git://github.com/cschlueter/vim-ir_black.git"
 
 vim_plugin_task "molokai" do
   sh "curl https://github.com/mrtazz/molokai.vim/raw/master/colors/molokai.vim > colors/molokai.vim"
