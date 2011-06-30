@@ -153,13 +153,10 @@ vim_plugin_task "scss-syntax",      "git://github.com/cakebaker/scss-syntax.vim.
 vim_plugin_task "notes",            "git://github.com/xolox/vim-notes.git"
 vim_plugin_task "solarized",        "git://github.com/altercation/vim-colors-solarized.git"
 vim_plugin_task "irblack",          "git://github.com/cschlueter/vim-ir_black.git"
+vim_plugin_task "rvm",              "git://github.com/csexton/rvm.vim.git"
 
 vim_plugin_task "molokai" do
   sh "curl https://github.com/mrtazz/molokai.vim/raw/master/colors/molokai.vim > colors/molokai.vim"
-end
-
-vim_plugin_task "rvm" do
-  sh "curl https://github.com/csexton/rvm.vim/raw/master/plugin/rvm.vim > plugin/rvm.vim"
 end
 
 vim_plugin_task "snipmate.vim",     "http://github.com/msanders/snipmate.vim.git" do
