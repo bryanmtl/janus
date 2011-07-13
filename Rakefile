@@ -155,13 +155,9 @@ vim_plugin_task "solarized",        "git://github.com/altercation/vim-colors-sol
 vim_plugin_task "irblack",          "git://github.com/cschlueter/vim-ir_black.git"
 vim_plugin_task "rvm",              "git://github.com/csexton/rvm.vim.git"
 
-vim_plugin_task "molokai" do
-  sh "curl https://github.com/mrtazz/molokai.vim/raw/master/colors/molokai.vim > colors/molokai.vim"
-end
-
 vim_plugin_task "snipmate.vim",     "http://github.com/msanders/snipmate.vim.git" do
   cwd = File.expand_path("../", __FILE__)
-  other_dirs = %w[ after snippets ]
+  other_dirs = %w[ after ]
   other_dirs.each { |d| mkdir_p d }
 
   Dir.chdir "tmp/snipmate.vim" do
@@ -173,10 +169,11 @@ vim_plugin_task "snipmate.vim",     "http://github.com/msanders/snipmate.vim.git
   end
 end
 
-vim_plugin_task "rubysnippets", "git://github.com/kaichen/vim-snipmate-ruby-snippets.git" do
+vim_plugin_task "snipmate-snippets", "git://github.com/scrooloose/snipmate-snippets.git" do
   cwd = File.expand_path("../", __FILE__)
-  dir = File.expand_path("tmp/rubysnippets")
-  sh "cp #{dir}/*.snippets #{cwd}/snippets/"
+  dir = File.expand_path("tmp/snipmate-snippets")
+  sh "cp -r #{dir}/* #{cwd}/snippets/."
+  sh "rm -f #{cwd}/snippets/*.snippets"
 end
 
 vim_plugin_task "command_t",        "git://github.com/wincent/Command-T.git" do
