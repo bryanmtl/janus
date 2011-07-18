@@ -18,14 +18,22 @@ if has("gui_macvim")
   " Command-/ to toggle comments
   map <D-/> <plug>NERDCommenterToggle<CR>
 
-  " Caommand-f to toggle full screen
+  " Command-f to toggle full screen
   map <D-f> :set invfu<CR>
 
   "au GUIEnter * set fullscreen
 endif
 
-color ir_black
+set winwidth=84
+" We have to have a winheight bigger than we want to set winminheight. But if
+" we set winheight to be huge before winminheight, the winminheight set will
+" fail.
+set winheight=5
+set winminheight=5
+set winheight=999
 
+
+color ir_black
 set guifont=Monaco:h14
 
 " Start without the toolbar
