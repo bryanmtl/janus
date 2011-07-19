@@ -8,6 +8,9 @@ set incsearch
 set ignorecase
 set smartcase
 
+" get out of insert mode easily
+inoremap jj <ESC>
+
 " Tab completion
 set wildmode=list:longest,list:full
 set wildignore+=*.o,*.obj,.git,*.rbc
