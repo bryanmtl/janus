@@ -15,13 +15,8 @@ if has("gui_macvim")
   " Command-e for ConqueTerm
   map <D-e> :call StartTerm()<CR>
 
-  " Command-/ to toggle comments
-  map <D-/> <plug>NERDCommenterToggle<CR>
-
   " Command-f to toggle full screen
   map <D-f> :set invfu<CR>
-
-  "au GUIEnter * set fullscreen
 endif
 
 set winwidth=84
@@ -31,7 +26,6 @@ set winwidth=84
 set winheight=5
 set winminheight=5
 set winheight=999
-
 
 color ir_black
 set guifont=Monaco:h14
@@ -46,9 +40,9 @@ function StartTerm()
 endfunction
 
 " Project Tree
-autocmd VimEnter * NERDTree
-autocmd VimEnter * wincmd p
-autocmd VimEnter * call s:CdIfDirectory(expand("<amatch>"))
+" autocmd VimEnter * NERDTree
+" autocmd VimEnter * wincmd p
+" autocmd VimEnter * call s:CdIfDirectory(expand("<amatch>"))
 
 " Disable netrw's autocmd, since we're ALWAYS using NERDTree
 runtime plugin/netRwPlugin.vim

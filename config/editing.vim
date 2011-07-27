@@ -29,9 +29,9 @@ set expandtab
 set autoread     " automatically reload a file if it's changed outside vim
 
 " wrap settings
-"set nowrap       " wrap lines rather than use horiz. scrolling
-"set linebreak    " try not to wrap in the middle of a word
-"set textwidth=80 " 80-character lines maximum
+set nowrap       " wrap lines rather than use horiz. scrolling
+set linebreak    " try not to wrap in the middle of a word
+set textwidth=80 " 80-character lines maximum
 
 " format settings
 " t - Auto-wrap text using textwidth
